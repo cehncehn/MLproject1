@@ -3,16 +3,16 @@ from typing import List
 
 Hyphen_e = '-e .'
 
-def get_requirements(filename: str) -> List[str]:
-    requirements = []
-    with open(filename) as obj:
-        requirements = obj.readlines()
-        requirements = [req.replace("\n", "") for req in requirements]
-       
-        if Hyphen_e in requirements:
-             requirements.remove(Hyphen_e)
-    
-    return requirements
+#def get_requirements(filename: str) -> List[str]:
+#    requirements = []
+#    with open(filename) as obj:
+#        requirements = obj.readlines()
+#        requirements = [req.replace("\n", "") for req in requirements]
+#       
+#        if Hyphen_e in requirements:
+#             requirements.remove(Hyphen_e)
+#    
+#    return requirements
 
 with open("README.md", "r", encoding='utf-8') as fh:
     long_description = fh.read()
@@ -24,7 +24,7 @@ setup(
     author_email="cc1227686517@gmail.com",
     long_description=long_description,
     url=f'https://github.com/cehncehn/MLproject1.git',
-    install_requires=get_requirements("requirements.txt"),
+#    install_requires=get_requirements("requirements.txt"),
     package_dir={"": "src"},
     packages=find_packages(where="src")
 )
