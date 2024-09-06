@@ -1,16 +1,30 @@
-# from setuptools import setup, find_packages
-# from typing import List
+from setuptools import setup, find_packages
+from typing import List
 
-# HYPEN_E_DOT='-e .'
+Hyphen_e = '-e .'
 
-# def get_requiremet(file_path:str)->List[str]:
+# def get_requirements(filename: str) -> List[str]:
 #     requirements = []
-#     with open(file_path) as f:
-#         requirements=f.readlines()
-#         requirements=[req.replace("\n","")for req in requirements]
+#     with open(filename) as obj:
+#         requirements = obj.readlines()
+#         requirements = [req.replace("\n", "") for req in requirements]
         
-#         if HYPEN_E_DOT in requirements:
-#             requirements.remove(HYPEN_E_DOT)
+#         if Hyphen_e in requirements:
+#             requirements.remove(Hyphen_e)
+    
 #     return requirements
 
-# print(get_requiremet("requirements.txt"))
+with open("README.md", "r", encoding='utf-8') as fh:
+    long_description = fh.read()
+
+setup(
+    name="mongodb_connect",
+    version="0.1.0",
+    author="Tarun",
+    author_email="malhotratarun06@gmail.com",
+    long_description=long_description,
+    url=f'https://github.com/malhotratk/packagetest.git',
+    # install_requires=get_requirements("requirements.txt"),
+    package_dir={"": "src"},
+    packages=find_packages(where="src")
+)
