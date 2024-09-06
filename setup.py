@@ -20,7 +20,7 @@ with open("README.md", "r", encoding='utf-8') as fh:
 setup(
     name="mongodb_connect",
     version="0.1.0",
-    author="Tarun",
+    author="Chen Chen",
     author_email="cc1227686517@gmail.com",
     long_description=long_description,
     url=f'https://github.com/cehncehn/MLproject1.git',
